@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import GameDetails from "./components/GameDetails";
+import Navbar from "./components/Navbar";
+import SecondSection from "./components/SecondSection";
+import VideoPlayer from "./components/VideoPlayer.js";
+import "./index.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <div
+        class="alert alert-danger alert-dismissible fade show d-none"
+        role="alert"
+        id="alert"
+      >
+        <strong>ALERT!</strong> Session Time Out
+      </div>
+      <div className="container d-flex">
+        <GameDetails />
+        <div className="border m-5"></div>
+        <VideoPlayer />
+      </div>
+      <div className="border m-4">
+        <SecondSection />
+      </div>
+    </>
   );
 }
 
